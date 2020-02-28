@@ -38,6 +38,11 @@ public class AppTest
         } catch (AssertionError e) {
             fail("\"message\" is not \"Hello World!\"");
         }
+        try {
+            assertEquals("Hello !" + System.getProperty("line.separator"), outContent.toString());
+        } catch (AssertionError e) {
+            fail("\"second_message\" is not \"Hello !\"");
+        }
     }
 
     @After
